@@ -345,3 +345,32 @@ input[type="submit"]:hover {
 	margin-bottom: 15px;
 	text-align: center;
 }
+
+
+
+
+dl {
+	margin: 15px;
+}
+
+
+	dt {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin: .5em 0 0 15px;
+	padding: 0;
+	margin-left: px;
+	}
+	dd {
+	display: list-item;
+	margin: 0 0 0 15px;
+	padding: .5em;
+	word-wrap: break-word;
+	font-size: 20px;
+	}
+
+.userData {
+	font-size: 20px;
+	margin: 10px;
+	font-weight: 500;
+}

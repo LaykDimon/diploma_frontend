@@ -73,13 +73,14 @@ export default function Login() {
     .then(data => {
         console.log(data);
         localStorage.setItem("userSession", JSON.stringify(data));
+        localStorage.setItem("isAuthenticated", true);
     })
     }
 
 
     return (
         <div className='center'>
-            <h1>Login</h1>
+            <h1>Увійти</h1>
 
             {/* Calling to the methods */}
             <div className="messages">
@@ -92,17 +93,17 @@ export default function Login() {
                 <div className='txtField'>
                     <input onChange={handleEmail} value={email} type='email' required />
                     <span></span>
-                    <label>Email</label>
+                    <label>Поштовий адрес</label>
                 </div>
                 <div className='txtField'>
                     <input onChange={handlePassword} value={password} type='password' required />
                     <span></span>
-                    <label>Password</label>
+                    <label>Пароль</label>
                 </div>
-                <div className='pass'>Forgot password?</div>
+                <div className='pass'>Забули пароль?</div>
                 <input type='submit' value='Login' onClick={handleSubmit} />
                 <div className='signupLink'>
-                    Not a member? <Link className='navLink' to="/signup">Signup</Link>
+                    Ще не зареєстровані? <Link className='navLink' to="/signup">Реєстрація</Link>
                 </div>
             </form>
             

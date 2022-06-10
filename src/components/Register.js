@@ -118,7 +118,7 @@ export default function Register() {
 
     return (
       <div className='center'>
-      <h1>Registration</h1>
+      <h1>Реєстрація</h1>
 
       {/* Calling to the methods */}
       <div className="messages">
@@ -131,26 +131,26 @@ export default function Register() {
           <div className='txtField'>
               <input onChange={handleUsername} value={username} type='text' required id ='username'/>
               <span></span>
-              <label>Username</label>
+              <label>Ім'я користувача</label>
           </div>
           <div className='txtField'>
               <input onChange={handleEmail} value={email} type='email' required id='email' />
               <span></span>
-              <label>Email</label>
+              <label>Поштовий адрес</label>
           </div>
           <div className='txtField'>
               <input onChange={handlePassword} value={password} type='password' required id='password' />
               <span></span>
-              <label>Password</label>
+              <label>Пароль</label>
           </div>
           <div className='txtField'>
               <input onChange={handleConfirmPassword} value={confirmPassword} type='password' required id='confirmPassword' />
               <span></span>
-              <label>Confirm password</label>
+              <label>Підтвердити пароль</label>
           </div>
-          <input type='submit' value='Register' id='submitBtn' onClick={handleSubmit} />
+          <input type='submit' value='Зареєструватись' id='submitBtn' onClick={handleSubmit} />
           <div className='loginLink'>
-              Already signed up? <Link className='navLink' to="/login">Login</Link>
+              Вже зареєстровані? <Link className='navLink' to="/login">Увійти</Link>
           </div>
       </form>
 
