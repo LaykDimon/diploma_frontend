@@ -10,11 +10,10 @@ function isUserAuthenticated() {
 function logout() {
     localStorage.clear("userSession");
     localStorage.setItem("isAuthenticated", false);
+    window.location.reload(false);
 }
 
 export default function Header() {
-
-    
 
     return (
         <div className='header'>
@@ -24,12 +23,17 @@ export default function Header() {
                 </div>
                 <ul className='navbar'>
                     <Link className='navLink' to="/about"><li>Терміни</li></Link>
-                    {console.log(isUserAuthenticated())}
-                    {isUserAuthenticated() ? 
-                    <><Link className='navLink' to='/profile'><li>{getUserSessionData().user.username}</li></Link></>  :  
-                    <><Link className='navLink' to="/signup"><li>Реєстрація</li></Link>
-                    <Link className='navLink' to="/login"><li>Вхід</li></Link></> }
-                    <Link to = '/analyzer' className='navLink' onClick={logout}><li>Вихід</li></Link>
+                    {JSON.parse(isUserAuthenticated()) 
+                        ?   <>
+                                <Link className='navLink' to='/profile'><li>{getUserSessionData()?.user.username}</li></Link>
+                                <Link to = '/analyzer' className='navLink' onClick={logout}><li>Вихід</li></Link>
+                            </>
+                        :   <>
+                                <Link className='navLink' to="/signup"><li>Реєстрація</li></Link>
+                                <Link className='navLink' to="/login"><li>Вхід</li></Link>
+                            </>     
+                    } 
+                    
                 </ul>
             </div>
         </div>

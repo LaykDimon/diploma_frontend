@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getUserSessionData } from '../extra/utils';
 import '../style.css';
 import TotalIndicator from './WordsIndicator';
 //import AnalyzeButton from './AnalyzeButton';
@@ -8,7 +9,7 @@ export default function AnalyzeField() {
     const [inputText, setInputText] = useState('');
     const [inputUrl, setInputUrl] = useState('');
 
-    const [showResults, setShowResults] = useState(false)
+    const [showResults, setShowResults] = useState(false);
     // const [showRecommendations, setShowRecommendations] = useState(false) 
     
     const handleTextChange = (e) => setInputText(e.target.value);
@@ -141,7 +142,8 @@ export default function AnalyzeField() {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ 
-            input_text: inputText
+            input_text: inputText,
+            user_id: getUserSessionData().user.id
         }),
         mode: 'cors',
       }).then(response => response.json())
